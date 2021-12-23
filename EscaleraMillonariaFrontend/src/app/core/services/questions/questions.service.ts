@@ -14,6 +14,6 @@ export class QuestionsService {
   constructor(private http: HttpClient) { }
 
   getQuestionsByCategory(idCategory: number){
-    return this.http.get<Question[]>(`${environment.url_api}/questions/${idCategory}`);
+    return this.http.get<Question[]>(`${environment.url_api}/Questions?idCategory=${idCategory}`);
   }
 }
