@@ -37,4 +37,8 @@ export class QuestionsComponent implements OnInit {
     optionFour: new FormControl(''),
   })
 
+  onSubmit(){
+    console.log(this.questionForm.value);
+  }
+
 }
