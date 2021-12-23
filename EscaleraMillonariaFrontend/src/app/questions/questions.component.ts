@@ -13,6 +13,7 @@ import { Question } from './../shared/models/question.model';
 export class QuestionsComponent implements OnInit {
 
   question!: Question;
+  dataSource: any= [];
 
   constructor(
     private service: QuestionsService,
@@ -27,18 +28,6 @@ export class QuestionsComponent implements OnInit {
     this.service.getQuestionsByCategory(idCategory).subscribe(question => {
       console.log(question);
     });
-  }
-
-  questionForm = new FormGroup({
-    questionStatement: new FormControl(''),
-    optionOne: new FormControl(''),
-    optionTwo: new FormControl(''),
-    optionThree: new FormControl(''),
-    optionFour: new FormControl(''),
-  })
-
-  onSubmit(){
-    console.log(this.questionForm.value);
-  }
+  }  
 
 }
