@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { QuestionsService } from '../core/services/questions/questions.service';
 
@@ -27,5 +28,13 @@ export class QuestionsComponent implements OnInit {
       console.log(question);
     });
   }
+
+  questionForm = new FormGroup({
+    questionStatement: new FormControl(''),
+    optionOne: new FormControl(''),
+    optionTwo: new FormControl(''),
+    optionThree: new FormControl(''),
+    optionFour: new FormControl(''),
+  })
 
 }
