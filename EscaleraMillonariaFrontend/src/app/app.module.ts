@@ -7,6 +7,8 @@ import { QuestionsComponent } from './questions/questions.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { QuestionsService } from './core/services/questions/questions.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    QuestionsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
