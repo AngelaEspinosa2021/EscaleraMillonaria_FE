@@ -39,11 +39,11 @@ export class QuestionsComponent implements OnInit {
 
   validateAnswer(num: string, answer: string){
     console.log(num,answer);
-    this.index++;
-    this.currentQuestion = this.questions[this.index];
+    
     if(num == answer)
     {
-      console.log(true);
+      this.index++;
+      this.currentQuestion = this.questions[this.index];
     }
     console.log(false);
   }

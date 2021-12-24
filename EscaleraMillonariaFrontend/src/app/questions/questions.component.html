@@ -1,38 +1,42 @@
 <div class="principal" *ngIf="currentQuestion">
+    <div class="content">
         <div class="row">
-            <div class="col-12 item">
-                <h2>Pregunta {{index + 1}}/6</h2>
+            <div class="row title">     
+                <span>¿Cuanto sabes de Colombia?</span>
             </div>
-        </div>
+        </div>        
         <div class="row">
             <div class="col-12 question">
                 <span>{{currentQuestion.questionStatement}}</span>          
             </div>        
         </div>
-        <br>
-        <div class="row op-1">
-            <div class="col-4">
-                <button mat-raised-button (click)="validateAnswer('1',currentQuestion.answer)">{{currentQuestion.optionOne}}</button>            
+        <br>        
+        <div class="row options">
+            <div class="row">
+                <div class="col-3">
+                    <button mat-raised-button (click)="validateAnswer('1',currentQuestion.answer)">{{currentQuestion.optionOne}}</button>            
+                </div>
+                <div class="col-3">
+                    <button mat-raised-button (click)="validateAnswer('2',currentQuestion.answer)">{{currentQuestion.optionTwo}}</button>            
+                </div>
+                <div class="col-3">
+                    <button mat-raised-button  (click)="validateAnswer('3',currentQuestion.answer)">{{currentQuestion.optionThree}}</button>            
+                </div>
+                <div class="col-3">
+                    <button mat-raised-button  (click)="validateAnswer('4',currentQuestion.answer)">{{currentQuestion.optionFour}}</button>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="row op-2">
-            <div class="col-4">
-                <button mat-raised-button (click)="validateAnswer('2',currentQuestion.answer)">{{currentQuestion.optionTwo}}</button>            
+        <div class="row board">
+            <div class="col-3">
+                <div class="row">
+                    <div class="col-4 index">
+                        <h3>Pregunta {{index + 1}}/6</h3>
+                    </div>             
+                    
+                </div>                
+                <h2></h2>
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-4 op-3">
-                <button mat-raised-button  (click)="validateAnswer('3',currentQuestion.answer)">{{currentQuestion.optionThree}}</button>            
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-4">
-                <button mat-raised-button  (click)="validateAnswer('4',currentQuestion.answer)">{{currentQuestion.optionFour}}</button>
-            </div>
-        </div>
-        <br>
-        <br>
+    </div>                   
 </div>
