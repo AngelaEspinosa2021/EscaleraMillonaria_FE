@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CoreRoutingModule } from './core-routing.module';
 import { QuestionsService } from './services/questions/questions.service';
 import { CategoriesService } from './services/categories/categories.service';
+import { AwardsService } from './services/awards/awards.service';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CategoriesService } from './services/categories/categories.service';
   ],
   providers: [
     QuestionsService,
-    CategoriesService
+    CategoriesService,
+    AwardsService
   ]
 })
 export class CoreModule { }
