@@ -5,5 +5,6 @@ export interface Question {
     optionTwo: string,
     optionThree: string,
     optionFour: string,
+    answer: string,
     idCategory: number 
 }

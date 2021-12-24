@@ -13,25 +13,25 @@
         <br>
         <div class="row op-1">
             <div class="col-4">
-                <button mat-raised-button>{{question.optionOne}}</button>            
+                <button mat-raised-button (click)="validateAnswer('1',question.answer)">{{question.optionOne}}</button>            
             </div>
         </div>
         <br>
         <div class="row op-2">
             <div class="col-4">
-                <button mat-raised-button>{{question.optionTwo}}</button>            
+                <button mat-raised-button (click)="validateAnswer('2',question.answer)">{{question.optionTwo}}</button>            
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-4 op-3">
-                <button mat-raised-button>{{question.optionThree}}</button>            
+                <button mat-raised-button  (click)="validateAnswer('3',question.answer)">{{question.optionThree}}</button>            
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-4">
-                <button mat-raised-button>{{question.optionFour}}</button>
+                <button mat-raised-button  (click)="validateAnswer('4',question.answer)">{{question.optionFour}}</button>
             </div>
         </div>
         <br>

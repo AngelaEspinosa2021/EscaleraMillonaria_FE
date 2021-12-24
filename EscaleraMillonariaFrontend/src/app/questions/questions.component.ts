@@ -15,8 +15,7 @@ import { Question } from './../shared/models/question.model';
 export class QuestionsComponent implements OnInit {
 
   questions: Question[] = [];
-  
-  
+    
   constructor(
     private questionsService: QuestionsService,
     private route: ActivatedRoute
@@ -35,8 +34,13 @@ export class QuestionsComponent implements OnInit {
     });     
   }
 
-  trackByFn(index: number, item:Question):number{
-    return index;
+  validateAnswer(num: string, answer: string){
+    console.log(num,answer);
+    if(num == answer)
+    {
+      console.log(true);
+    }
+    console.log(false);
   }
 
 }
