@@ -15,6 +15,8 @@ import { Question } from './../shared/models/question.model';
 export class QuestionsComponent implements OnInit {
 
   questions: Question[] = [];
+  currentQuestion?: Question = undefined;
+  index = 0;
     
   constructor(
     private questionsService: QuestionsService,
@@ -29,6 +31,7 @@ export class QuestionsComponent implements OnInit {
     this.questionsService.getQuestionsByCategory(idCategory).subscribe(questions => {
       {
         this.questions = questions.result;
+        this.currentQuestion = this.questions[this.index];
         console.log(questions); 
       }
     });     
@@ -36,6 +39,8 @@ export class QuestionsComponent implements OnInit {
 
   validateAnswer(num: string, answer: string){
     console.log(num,answer);
+    this.index++;
+    this.currentQuestion = this.questions[this.index];
     if(num == answer)
     {
       console.log(true);
