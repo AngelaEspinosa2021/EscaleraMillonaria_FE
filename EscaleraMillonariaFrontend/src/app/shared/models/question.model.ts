@@ -1,9 +1,9 @@
 export interface Question {
     idQuestion: number,
-    QuestionStatement: string,
-    OptionOne: string,
-    OptionTwo: string,
-    OptionThree: string,
-    OptionFour: string,
-    IdCategory: number 
+    questionStatement: string,
+    optionOne: string,
+    optionTwo: string,
+    optionThree: string,
+    optionFour: string,
+    idCategory: number 
 }

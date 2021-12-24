@@ -9,11 +9,9 @@ import { Question } from './../../../shared/models/question.model';
 })
 export class QuestionsService {
 
-  baserUrl: string = 'https://localhost:44373/api/Questions';
-
-  constructor(private http: HttpClient) { }
+ constructor(private http: HttpClient) { }
 
   getQuestionsByCategory(idCategory: number){
-    return this.http.get<Question[]>(`${environment.url_api}/Questions?idCategory=${idCategory}`);
+    return this.http.get<any>(`${environment.url_api}/Questions?idCategory=${idCategory}`);
   }
 }

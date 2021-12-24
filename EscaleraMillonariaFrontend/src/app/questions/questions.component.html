@@ -1,5 +1,33 @@
-<mat-card>
-    <table mat-table [datasource]="dataSource" class="mat-elevation-z8">
-        
-    </table>
-</mat-card>
+<ng-container *ngFor="let question of questions">
+    <div>
+        <span>
+            {{question.questionStatement}}
+        </span>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs">
+            {{question.optionOne}}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs">
+            {{question.optionTwo}}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs">
+            {{question.optionThree}}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs">
+            {{question.optionFour}}
+        </div>
+    </div>
+    <br>
+    <br>
+</ng-container>

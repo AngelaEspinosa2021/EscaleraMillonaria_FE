@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
+
 
 
 @NgModule({
@@ -14,13 +15,15 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     MatCardModule,
     MatRadioModule,
-    MatTableModule
+    MatTableModule,
+   
   ],
   exports: [
     MatInputModule,
     MatCardModule,
     MatRadioModule,
-    MatTableModule
+    MatTableModule,
+   
   ]
 })
 export class MaterialModule { }

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Params } from '@angular/router';
 import { QuestionsService } from '../core/services/questions/questions.service';
+
 
 import { Question } from './../shared/models/question.model';
 
@@ -12,11 +14,10 @@ import { Question } from './../shared/models/question.model';
 })
 export class QuestionsComponent implements OnInit {
 
-  question!: Question;
-  dataSource: any= [];
-
+  questions: Question[] = [];
+  
   constructor(
-    private service: QuestionsService,
+    private questionsService: QuestionsService,
     private route: ActivatedRoute
     ) { }
 
@@ -25,9 +26,12 @@ export class QuestionsComponent implements OnInit {
   }
 
   getQuestionsByCategory(idCategory: number) {
-    this.service.getQuestionsByCategory(idCategory).subscribe(question => {
-      console.log(question);
-    });
-  }  
+    this.questionsService.getQuestionsByCategory(idCategory).subscribe(questions => {
+      {
+        this.questions = questions.result;
+        console.log(questions); 
+      }
+    });     
+  } 
 
 }
