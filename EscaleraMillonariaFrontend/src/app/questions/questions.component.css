@@ -33,9 +33,6 @@ button {
     height: 20px;
 }
 
-
-}
-
 div.col-12.question{
     background-color:mediumblue;
     color: white;
@@ -58,7 +55,6 @@ div.options{
 div.board{
     background-color: white;
     border: 10px solid blue;
-    color: white;
     height: 320px;
     width: 380px;
     margin-left:500px;
