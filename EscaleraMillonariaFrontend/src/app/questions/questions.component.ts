@@ -16,6 +16,7 @@ export class QuestionsComponent implements OnInit {
 
   questions: Question[] = [];
   
+  
   constructor(
     private questionsService: QuestionsService,
     private route: ActivatedRoute
@@ -32,6 +33,10 @@ export class QuestionsComponent implements OnInit {
         console.log(questions); 
       }
     });     
-  } 
+  }
+
+  trackByFn(index: number, item:Question):number{
+    return index;
+  }
 
 }

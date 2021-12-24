@@ -1,0 +1,55 @@
+.principal{
+    background-color: yellow;
+}
+
+button {
+    background-color: red;
+    font-size: 30px;
+    color:white;
+    font-family: 'Fredoka One';
+    border: 5px;
+    border-radius: 5px;
+    margin-right: 200px;
+    margin-left: 200px;
+    width: 400px;
+    height: 80px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.item {
+    color: red;
+    font-family: 'Bangers';
+    font-size: 20px;
+    padding-top: 10px; 
+    padding-left: 20px;   
+}
+
+.question{
+    background-color:mediumblue;
+    color: white;
+    font-size: 30px;
+    font-family: 'Bangers';
+    border-radius: 10px;
+    text-align: center;
+    height: 60px;
+    width: 800px;
+    margin-top: 10px;
+    vertical-align: middle;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-right: 200px;
+    margin-left: 200px;    
+}
+
+.op-1{
+    margin-left: 400px !important;    
+}
+
+.op-2{
+    margin-left: 250px !important;    
+}
+
+.op-3{
+    margin-left: 100px !important;    
+}

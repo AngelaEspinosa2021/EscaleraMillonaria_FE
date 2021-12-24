@@ -1,33 +1,40 @@
-<ng-container *ngFor="let question of questions">
-    <div>
-        <span>
-            {{question.questionStatement}}
-        </span>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-xs">
-            {{question.optionOne}}
+<div class="principal">
+    <ng-container *ngFor="let question of questions; index as i;">
+        <div class="row">
+            <div class="col-12 item">
+                <h2>Pregunta {{i + 1}}/6</h2>
+            </div>
         </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-xs">
-            {{question.optionTwo}}
+        <div class="row">
+            <div class="col-12 question">
+                <span>{{question.questionStatement}}</span>          
+            </div>        
         </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-xs">
-            {{question.optionThree}}
+        <br>
+        <div class="row op-1">
+            <div class="col-4">
+                <button mat-raised-button>{{question.optionOne}}</button>            
+            </div>
         </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-xs">
-            {{question.optionFour}}
+        <br>
+        <div class="row op-2">
+            <div class="col-4">
+                <button mat-raised-button>{{question.optionTwo}}</button>            
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
-</ng-container>
+        <br>
+        <div class="row">
+            <div class="col-4 op-3">
+                <button mat-raised-button>{{question.optionThree}}</button>            
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-4">
+                <button mat-raised-button>{{question.optionFour}}</button>
+            </div>
+        </div>
+        <br>
+        <br>
+    </ng-container>
+</div>
