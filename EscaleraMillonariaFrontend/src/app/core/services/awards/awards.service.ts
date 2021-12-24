@@ -10,6 +10,6 @@ export class AwardsService {
   constructor(private http: HttpClient) { }
 
   getAward(idCategory: number, questionPosition: number){
-    return this.http.get<any>(`${environment.url_api}/Awards/${idCategory}/questionPosition`);
+    return this.http.get<any>(`${environment.url_api}/Awards/${idCategory}/${questionPosition}`);
   }
 }
