@@ -21,7 +21,7 @@ export class QuestionsComponent implements OnInit {
 
   categories: Category[] = [];
   currentCategory?: Category = undefined;
-  indexCategory = 0;
+  indexCategory = 1;
   questions: Question[] = [];
   currentQuestion?: Question = undefined;
   indexQuestion = 0;
@@ -37,7 +37,7 @@ export class QuestionsComponent implements OnInit {
   ngOnInit(): void {
     this.getQuestionsByCategory(1);
     this.getAllCategories();
-    this.getAward(1,2);
+    //this.getAward(1,1);
   }
 
   getQuestionsByCategory(idCategory: number) {
@@ -50,20 +50,28 @@ export class QuestionsComponent implements OnInit {
     });     
   }
 
-  validateAnswer(num: string, answer: string){
-    console.log(num,answer);    
+  validateAnswer(num: string, answer: string,){
+    console.log(num,answer)
     if(num == answer)
     {
       this.indexQuestion++;
-      this.currentQuestion = this.questions[this.indexQuestion];
+      console.log(this.indexQuestion);
+      this.nextCategory(this.indexQuestion);      
+      this.currentQuestion = this.questions[this.indexQuestion];      
+      //this.getAward(idCategory,questionPosition);
+      
     }
-    console.log(false);
+    else
+    {
+      console.log(false);
+    }  
+    
   }
 
   getAllCategories(){
     this.categoriesService.getAllCategories().subscribe(categories => {
       this.categories = categories.result;
-      this.currentCategory = this.categories[this.indexCategory];      
+      this.currentCategory = this.categories[this.indexCategory-1];      
       console.log(categories);
     })
   }
@@ -73,6 +81,16 @@ export class QuestionsComponent implements OnInit {
       this.award = award[0];
       console.log(award);
     })
+  }
+
+  nextCategory(indexQuestion: number){
+    if(this.indexQuestion == 6)
+      {    
+        this.indexCategory++;
+        this.currentCategory = this.categories[this.indexCategory-1];
+        this.getQuestionsByCategory(this.indexCategory);
+        this.indexQuestion=0;
+      }
   }
 
 }
