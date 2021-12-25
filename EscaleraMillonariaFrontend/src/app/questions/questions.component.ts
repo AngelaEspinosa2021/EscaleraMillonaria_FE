@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -26,10 +27,11 @@ export class QuestionsComponent implements OnInit {
   currentQuestion?: Question = undefined;
   indexQuestion = 0;
   award!: Award;
+  contadorAlert = 0;
     
   constructor(
     private questionsService: QuestionsService,
-    private route: ActivatedRoute,
+    private router: Router,
     private categoriesService: CategoriesService,
     private awardsService: AwardsService
     ) { }
@@ -54,6 +56,8 @@ export class QuestionsComponent implements OnInit {
     console.log(num,answer)
     if(num == answer)
     {
+      alert("MUY BIEN, vamos por la siguiente.");
+      this.contadorAlert = 0;
       this.indexQuestion++;
       console.log(this.indexQuestion);
       this.nextCategory(this.indexQuestion);      
@@ -62,8 +66,18 @@ export class QuestionsComponent implements OnInit {
       
     }
     else
-    {
-      console.log(false);
+    { 
+      this.contadorAlert++; 
+      if(this.contadorAlert == 1)
+      {        
+        alert("¡PERDISTE!, piensa muy bien antes de contestar, solo te queda una oportunidad.");                
+      }
+      if(this.contadorAlert == 2)
+      {
+        alert("LO SIENTO, FIN DEL JUEGO.");
+        this.router.navigate(['./']);
+      }
+          
     }  
     
   }
@@ -85,7 +99,8 @@ export class QuestionsComponent implements OnInit {
 
   nextCategory(indexQuestion: number){
     if(this.indexQuestion == 6)
-      {    
+      { 
+        alert("BIEN HECHO, PASASTE A LA SIGUIENTE CATEGORIA.");   
         this.indexCategory++;
         this.currentCategory = this.categories[this.indexCategory-1];
         this.getQuestionsByCategory(this.indexCategory);
