@@ -37,9 +37,9 @@ export class QuestionsComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.getQuestionsByCategory(1);
+    this.getQuestionsByCategory(this.indexCategory);
     this.getAllCategories();
-    //this.getAward(1,1);
+    this.getAward(1,1);
   }
 
   getQuestionsByCategory(idCategory: number) {
@@ -62,7 +62,7 @@ export class QuestionsComponent implements OnInit {
       console.log(this.indexQuestion);
       this.nextCategory(this.indexQuestion);      
       this.currentQuestion = this.questions[this.indexQuestion];      
-      //this.getAward(idCategory,questionPosition);
+      this.getAward(this.indexCategory,this.indexQuestion+1);
       
     }
     else
@@ -91,6 +91,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   getAward(idCategory: number, questionPosition: number){
+    console.log("getAward", idCategory, questionPosition);
     this.awardsService.getAward(idCategory,questionPosition).subscribe(award => {
       this.award = award[0];
       console.log(award);
